@@ -124,7 +124,7 @@
 	//Get better quality image from a Spotify API search
 	function getSpotifyCover(fallbackImg, name, artist, album, currentSong){
 		$.ajax({
-			url: "https://api.spotify.com/v1/search?q="+name+"%20"+artist+"%20"+album+"&type=track&limit=1", 
+			url: "https://api.spotify.com/v1/search?q=track:"+name.replace(/ /g, "%20")+"%20artist:"+artist.replace(/ /g, "%20")+"%20album:"+album.replace(/ /g, "%20")+"&type=track&limit=1", 
 			dataType: "json", 
 			cache: false, 
 			success: function(json) {
